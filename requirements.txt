@@ -8,6 +8,7 @@ charset-normalizer==3.4.0
 click==8.1.7
 colorama==0.4.6
 cookiecutter==2.6.0
+coverage==7.6.8
 darkdetect==0.8.0
 fastapi==0.115.5
 flet==0.24.1
