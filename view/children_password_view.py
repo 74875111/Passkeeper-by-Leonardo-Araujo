@@ -1,5 +1,6 @@
 import flet as ft
 from authenticated import user_actions
+from cryptography.fernet import InvalidToken
 
 def children_password_view(page: ft.Page, user):
     def reload_passwords():
@@ -54,9 +55,15 @@ def children_password_view(page: ft.Page, user):
             confirm_dialog.open = False
             page.update()
 
+        # Desencriptar la contraseña
+        try:
+            decrypted_password = user_actions.fernet.decrypt(password.password.encode()).decode()
+        except InvalidToken:
+            decrypted_password = "Invalid token"
+
         service_name_input = ft.TextField(label="Service Name", value=password.service_name, width=250, read_only=True)
         user_email_input = ft.TextField(label="User/Email", value=password.user_email, width=250, read_only=True)
-        password_input = ft.TextField(label="Password", value=password.password, password=True, width=250, read_only=True)
+        password_input = ft.TextField(label="Password", value=decrypted_password, password=True, width=250, read_only=True)
         show_password_checkbox = ft.Checkbox(label="Show Password", on_change=toggle_password_visibility)
         save_button = ft.ElevatedButton(text="Save", on_click=on_save_password, visible=False)
 
