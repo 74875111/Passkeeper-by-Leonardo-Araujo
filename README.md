@@ -16,9 +16,7 @@
 .venv\Scripts\activate
 
 #### Crear el entorno virtual:
-```bash
 python -m venv .venv
-
 ### Otros 
 pip install -r requirements.txt
 coverage html
