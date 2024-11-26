@@ -1,6 +1,6 @@
 # PassKeeper
 
-**PassKeeper** es una herramienta diseñada para que los usuarios puedan almacenar y gestionar sus contraseñas de forma segura. Este proyecto utiliza una base de datos SQLite para proteger los datos y emplea contenedores Docker para facilitar el desarrollo y la portabilidad.
+**PassKeeper** es una herramienta diseñada para que los usuarios puedan almacenar y gestionar sus contraseñas de forma segura. Este proyecto utiliza una base de datos SQLite para proteger los datos.
 
 ## Equipo de desarrollo
 
